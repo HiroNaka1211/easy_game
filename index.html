@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>じゃんけん</title>
+
+    <script>
+        let times=0;
+        function R_Click(user){
+            let janken= ["グー","チョキ","パー"];
+            let janken_r= Math.floor(Math.random() *3);
+            console.log(janken_r)
+
+            if(janken_r === user) {
+                result= "あいこです"
+            }else if(user===0 && janken_r ===1){
+                result= "あなたの勝ち"
+                times++;
+            }else if(user === 1 && janken_r === 2){
+                result= "あなたの勝ち"
+                times++;
+            }else if(user === 2 && janken_r ===0){
+                result="あなたの勝ち"
+                times++;
+            }else{
+                result = "あなたの負け"
+                times=0;
+            }
+            document.getElementById("janken1").src="images/jan" + janken_r + ".png";
+            document.getElementById("janken2").src="images/jan" + user + ".png";
+            document.getElementById("Rejan1").innerHTML= janken[user]+"を選択しました。";
+            document.getElementById("Rejan2").innerHTML="相手は"+janken[janken_r];
+            document.getElementById("Rejan2").innerHTML=`勝負は<span style="color:blue;">${result}</span> +  連勝:${times}`;
+
+        }
+    </script>
+</head>
+<body>
+    <h1 id="header">じゃんけんゲーム</h1>
+    <h2 class="name">【相手】</h2>
+    <p><img id="janken1" src="images/janken.png" ></p>
+    <button onclick="R_Click(0)">グー</button>
+    <button onclick="R_Click(1)">チョキ</button>
+    <button onclick="R_Click(2)">パー</button>
+    <p><img id="janken2" src="images/janken.png" ></p>
+    
+    <h2 class="name">【自分】</h2>
+    <div id="Rejan1"></div>
+    <div id="Rejan2"></div>
+    <div id="result"></div>
+</body>
+</html>

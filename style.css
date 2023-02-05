@@ -1,0 +1,32 @@
+html{
+    width:100%;
+    text-align: center;
+}
+body{
+    /* margin: 2% 5%; */
+    width: 30%;
+}
+#header{
+    margin: 5px ;
+
+}
+h2{
+    margin: 5px;
+}
+p{
+    margin: 2px;
+}
+#janken1{
+    width: 130px;
+}
+#janken2{
+    width: 130px;
+}
+/* img {
+    cursor: pointer;
+    width: 100px; 
+    border-radius: 50%;
+} */
+/* .name{
+    margin-left: 30px;
+} */
